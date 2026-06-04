@@ -23,13 +23,13 @@ function App() {
   }, [isLoggedIn]);
 
   const getTasks = async () => {
-    const response = await axios.get("http://localhost:3000/tasks");
+    const response = await axios.get("https://kmct-react-tutorial.onrender.com/tasks");
     setTasks(response.data);
   };
 
   const fetchQuote = async () => {
     try {
-      const response = await axios.get("https://dummyjson.com/quotes/random");
+      const response = await axios.get("https://kmct-react-tutorial.onrender.com/quotes/random");
       setQuote(response.data.quote);
     } catch (error) {
       setQuote("You can do this! Keep pushing forward.");
@@ -38,13 +38,13 @@ function App() {
 
   const addTask = async () => {
     const newTask = { subject, taskDetails, deadline };
-    await axios.post("http://localhost:3000/tasks", newTask);
+    await axios.post("https://kmct-react-tutorial.onrender.com/tasks", newTask);
     getTasks(); 
     setSubject(""); setTaskDetails(""); setDeadline("");
   };
 
   const deleteTask = async (id) => {
-    await axios.delete(`http://localhost:3000/tasks/${id}`);
+    await axios.delete(`https://kmct-react-tutorial.onrender.com/tasks/${id}`);
     getTasks(); 
   };
 
