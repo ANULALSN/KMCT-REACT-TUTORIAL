@@ -5,7 +5,9 @@ const cors = require('cors');
 
 const app = express();
 app.use(express.json()); 
-app.use(cors());
+app.use(cors({
+  origin: "https://kmct-react-tutorial.vercel.app" 
+}));
 
 // 1. Connect Database
 mongoose.connect('mongodb+srv://acadenointerns_db_user:ZCi2yBtaHTxMiCi3@cluster0.sczphyk.mongodb.net/pro_planner?appName=Cluster0')
